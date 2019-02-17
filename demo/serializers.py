@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from demo.models import Author, Book
+from demo.models import Author, Book, Edition
 
 
 class AuthorSerializer(ModelSerializer):
@@ -14,3 +14,7 @@ class BookSerializer(ModelSerializer):
         fields = ('id', 'author', 'title')
 
 
+class EditionSerializer(ModelSerializer):
+    model = Edition
+    class Meta:
+        fields = ('id', 'boook', 'year')

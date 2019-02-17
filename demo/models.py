@@ -11,7 +11,16 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=60)
-    author = models.ForeignKey(Author, on_delete=True)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.title}'
+
+
+class Edition(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    year = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return  f'{self.book} edition {self.year}'
+
