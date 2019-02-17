@@ -8,10 +8,10 @@ from demo.models import Author, Book
 from demo.serializers import AuthorSerializer, BookSerializer
 
 
-class AuthorViewSet(NestedViewSetMixin, ModelViewSet):
+class AuthorViewSet( NestedViewSetMixin, ModelViewSet):
     serializer_class = AuthorSerializer
     queryset = Author.objects.all()
 
-class BookviewSet(NestedViewSetMixin, ModelViewSet):
+class BookViewSet(NestedViewSetMixin,ModelViewSet):
     serializer_class = BookSerializer
     queryset = Book.objects.all()
