@@ -15,11 +15,11 @@ class AuthorViewSet( NestedViewSetMixin, ModelViewSet):
 
 class BookViewSet(NestedViewSetMixin,ModelViewSet):
     serializer_class = BookSerializer
-    queryset = Book.objects.filter(author={1})
+    queryset = Book.objects.filter(author={})
 
 
 class EditionViewSet(NestedViewSetMixin, ModelViewSet):
     serializer_class = EditionSerializer
-    queryset = Edition.objects.filter(book__author={1}, book={2})
+    queryset = Edition.objects.filter(book__author={}, book={2})
 
 
